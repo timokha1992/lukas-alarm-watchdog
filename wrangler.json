@@ -1,31 +1,25 @@
 {
-  "compatibility_date": "2025-10-08",
+  "compatibility_date": "2026-09-08",
   "main": "src/server/index.ts",
-  "name": "durable-chat-template",
-  "migrations": [
-    {
-      "new_sqlite_classes": ["Chat"],
-      "tag": "v1"
-    }
-  ],
-  "assets": {
-    "directory": "./public",
-    "binding": "ASSETS",
-    "not_found_handling": "single-page-application"
-  },
-  "build": {
-    "command": "esbuild src/client/index.tsx --bundle --splitting --format=esm --platform=browser --outdir=public/dist"
-  },
+  "name": "lukas-alarm-watchdog",
+
   "durable_objects": {
     "bindings": [
       {
-        "class_name": "Chat",
-        "name": "Chat"
+        "name": "WATCHDOG",
+        "class_name": "Watchdog"
       }
     ]
   },
+
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["Watchdog"]
+    }
+  ],
+
   "observability": {
     "enabled": true
-  },
-  "upload_source_maps": true
+  }
 }
