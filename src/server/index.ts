@@ -487,3 +487,4 @@ export default {
     ctx.waitUntil(stub.fetch(new Request("https://internal/ensure-alarm")));
   },
 } satisfies ExportedHandler<Env>;
+
